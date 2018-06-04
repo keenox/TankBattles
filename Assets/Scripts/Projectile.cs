@@ -43,8 +43,11 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter( Collision collision )
     {
+        if (collision.gameObject.layer != 9)
+            return;
+
 		//Try to get a Target script off of the thing we hit
-		Target target = collision.gameObject.GetComponent<Target>();
+		Target target = collision.gameObject.transform.parent.GetComponent<Target>();
 
 		//We've hit something, so explode
 		Explode();
@@ -66,9 +69,13 @@ public class Projectile : MonoBehaviour
         rigidBody.isKinematic = true;
 		sphereCollider.enabled = false;
 
-		//Play the particle effect
+        //Play the particle effect
         if (explosionParticles != null)
-		    explosionParticles.SetActive(true);
+        {
+            //explosionParticles.SetActive(true);
+            var ps = explosionParticles.GetComponent<ParticleSystem>();
+            ps.Play();
+        }
 		
 		//Find all colliders that are with the explosion radius that are also on the target layer
 		Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius, targetLayerMask);

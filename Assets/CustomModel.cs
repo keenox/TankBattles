@@ -33,6 +33,7 @@ public class CustomModel : MonoBehaviour {
     public void InitModel()
     {
         m_instance = Instantiate(Model, gameObject.transform);
+        m_instance.name = "InstanceModel";
         //GetComponent<BoxCollider>().extents = m_instance.transform.boun
     }
 

@@ -22,7 +22,7 @@ public class CannonSystem : MonoBehaviour
 	{
 		//Get a reference to the projectile spawn point. By providing the path to the object like this, we are making an 
 		//inefficient method call more efficient
-		projectileSpawnTransform = GameObject.Find("ProjectileSpawn").transform;
+		projectileSpawnTransform = gameObject.transform.Find("InstanceModel/ProjectileSpawn").transform;
 
 		//Get a reference to the animator component
 		//anim = GetComponent<Animator> ();

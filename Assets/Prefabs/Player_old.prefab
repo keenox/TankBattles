@@ -305,6 +305,7 @@ MonoBehaviour:
   currentHealth: 100
   timeAfterHit: 0.5
   healthBar: {fileID: 224876634442985314}
+  explosion: {fileID: 0}
 --- !u!114 &114153479190534978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -541,6 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324b0593176933046b606358d66cce9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_model: {fileID: 0}
 --- !u!114 &114969223762300754
 MonoBehaviour:
   m_ObjectHideFlags: 1

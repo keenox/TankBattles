@@ -19,7 +19,10 @@ public class Health : MonoBehaviour
             currentHealth = 0;
             Debug.Log("Dead!");
             if (explosion != null)
-                explosion.SetActive(true);
+            {
+                //explosion.SetActive(true);
+                explosion.GetComponent<ParticleSystem>().Play();
+            }
             Destroy(gameObject, timeAfterHit);
         }
     }
